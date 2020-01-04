@@ -1,8 +1,9 @@
 """Article Entity
 """
 from dataclasses import dataclass
+from typing import Collection
 
-from src.domain.collection import Collection
+from .collection import _Collection
 
 
 @dataclass(frozen=True)
@@ -14,7 +15,7 @@ class Article:
 
 
 @dataclass(frozen=True)
-class Articles(Collection[Article]):
+class Articles(_Collection[Article]):
     """A collecton of Article entities
     """
-    values: [Article]
+    values: Collection[Article]

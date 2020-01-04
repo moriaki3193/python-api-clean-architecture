@@ -1,0 +1,7 @@
+app.py
+src/domain
+src/driver
+src/interactor
+src/interface
+src/repository
+src/rest

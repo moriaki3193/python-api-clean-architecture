@@ -1,7 +1,7 @@
 """
 """
 from src.domain.article import Articles
-from src.interface.repository.article import ArticleRepository
+from src.interface import ArticleRepository
 
 
 class ArticleInteractor:

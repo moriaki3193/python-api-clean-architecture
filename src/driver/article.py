@@ -8,7 +8,8 @@ class ArticleDriverImpl:
     """
     """
     async def get_articles(self, page: int) -> dict:
-        response = await aiohttp.request('GET', 'https://qiita.com/api/v2/items?page=1&per_page=20')._coro
+        url = f'https://qiita.com/api/v2/items?page={page}&per_page=20'
+        response = await aiohttp.request('GET', url)._coro
         articles = json.loads(await response.text())
         return {
             'articles': [{

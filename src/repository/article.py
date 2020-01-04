@@ -1,7 +1,7 @@
 """
 """
+from src.interface import ArticleDriver
 from src.domain.article import Article, Articles
-from src.interface.driver.article import ArticleDriver
 
 
 class ArticleRepositoryImpl:
