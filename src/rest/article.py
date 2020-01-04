@@ -2,7 +2,7 @@
 """
 import asyncio
 
-from flask import jsonify
+from flask import jsonify, request
 
 from src.domain.article import Articles
 from src.interface.usecase.article import ArticleUsecase
@@ -14,8 +14,8 @@ class ArticleResource:
     def __init__(self, article_usecase: ArticleUsecase) -> None:
         self.article_usecase = article_usecase
 
-    def index(self):
-        main_group: Articles = asyncio.run(self.article_usecase.get_list(0))
+    def index(self, page):
+        main_group: Articles = asyncio.run(self.article_usecase.get_list(page))
         return jsonify(articles_response(main_group))
 
 
